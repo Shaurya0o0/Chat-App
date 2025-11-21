@@ -43,9 +43,9 @@ export const AuthProvider = ({ children }) => {
                 localStorage.setItem("token", data.token)
                 toast.success(data.message)
             }  else {
-                console.log(error);
                 
-                toast.error(error.message)
+                
+                toast.error("Error while login")
             }
         } catch (error) {
             console.log(error);
