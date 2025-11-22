@@ -33,9 +33,10 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (state, credentials) => {
         try {
-            const { data } = await axios.post(`/api/auth/${state}`, credentials);
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/${state}`, credentials);
+console.log("Full login response:", response);
+const { data } = response;
 
-            console.log("Login response:", data);
 
             
 
