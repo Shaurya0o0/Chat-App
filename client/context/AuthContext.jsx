@@ -33,12 +33,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (state, credentials) => {
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/${state}`, credentials);
-console.log("Full login response:", response);
-const { data } = response;
-
-
-            
+            const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/${state}`, credentials);
 
             if(data.success) {
                 setAuthUser(data.userData);
